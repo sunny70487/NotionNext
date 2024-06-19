@@ -20,10 +20,10 @@ def parse_stiemap(site):
         big = re.findall('<loc>(.*?)</loc>', result.content.decode('utf-8'), re.S)
         return list(big)
     except:
-        print('请检查你的url是否有误。')
-        print('正确的应是完整的域名，包含https://，且不包含‘sitemap.xml’, 如下所示：')
-        print('正确的示例: https://ghlcode.cn')
-        print('详情参见: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
+        print('請檢查你的url是否有誤。')
+        print('正確的應是完整的域名，包含https://，且不包含‘sitemap.xml’, 如下所示：')
+        print('正確的示例: https://ghlcode.cn')
+        print('詳情參見: https://ghlcode.cn/fe032806-5362-4d82-b746-a0b26ce8b9d9')
 
 
 
