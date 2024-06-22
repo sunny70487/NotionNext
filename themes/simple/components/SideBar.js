@@ -3,6 +3,7 @@ import Live2D from '@/components/Live2D'
 import Announcement from './Announcement'
 import Catalog from './Catalog'
 import WWAds from '@/components/WWAds'
+import LatestPostsGroup from './LatestPostsGroup'
 
 /**
  * 侧边栏
@@ -10,17 +11,18 @@ import WWAds from '@/components/WWAds'
  * @returns
  */
 export default function SideBar (props) {
-  const { notice } = props
+  const { notice, latestPosts } = props
   return (<>
 
             <Catalog {...props} />
 
-            <Live2D />
+            {/* <Live2D /> */}
+            <LatestPostsGroup latestPosts={latestPosts} />
 
-            <Announcement post={notice} />
+            {/* <Announcement post={notice} />
 
             <AdSlot/>
-            <WWAds orientation="vertical" className="w-full" />
+            <WWAds orientation="vertical" className="w-full" /> */}
 
     </>)
 }

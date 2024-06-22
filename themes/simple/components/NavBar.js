@@ -56,8 +56,7 @@ export default function NavBar(props) {
           {!showSearchInput && <MenuList {...props} />}
         </div>
 
-        <div className="absolute right-12 h-full text-center px-2 flex items-center text-blue-400  cursor-pointer">
-          {/* <!-- extra links --> */}
+        {/* <div className="absolute right-12 h-full text-center px-2 flex items-center text-blue-400  cursor-pointer">
           <i
             className={
               showSearchInput
@@ -66,7 +65,7 @@ export default function NavBar(props) {
             }
             onClick={toggleShowSearchInput}
           ></i>
-        </div>
+        </div> */}
       </div>
     </nav>
   )
