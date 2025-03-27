@@ -277,7 +277,7 @@ const Layout404 = props => {
             const article = document.querySelector('#article-wrapper #notion-article')
             if (!article) {
               router.push('/404').then(() => {
-                console.warn('找不到页面', router.asPath)
+                console.warn('找不到頁面', router.asPath)
               })
             }
           }
