@@ -143,8 +143,11 @@ export async function getStaticProps({ params: { prefix }, locale }) {
   if (!props?.post) {
     // 无法获取文章
     props.post = null
-  } else {
+  } else if (typeof props.post.id === 'string' && props.post.id.length >= 32) {
     await processPostData(props, from)
+  } else {
+    // EmptyData stub 或其他无效 id，跳过 processPostData 并保证 blockMap 有效
+    props.post.blockMap = props.post.blockMap || { block: {} }
   }
   return {
     props,
