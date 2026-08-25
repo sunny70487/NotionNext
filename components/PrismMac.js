@@ -179,10 +179,6 @@ const renderCollapseCode = (codeCollapse, codeCollapseExpandDefault) => {
         continue
       }
 
-      const className = code.getAttribute('class') || ''
-      const languageMatch = className.match(/language-([\w-]+)/)
-      const language = languageMatch ? languageMatch[1] : ''
-
       const text = code.textContent || ''
       const lineCount = text ? text.split('\n').length : 0
 
@@ -206,11 +202,7 @@ const renderCollapseCode = (codeCollapse, codeCollapseExpandDefault) => {
       header.type = 'button'
       header.className = 'collapse-header'
 
-      const label = language
-        ? `${language.toUpperCase()} · ${lineCount} lines`
-        : `${lineCount} lines`
-
-      header.innerHTML = `<span class="collapse-label">${label}</span><svg class="collapse-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.293 6.293a1 1 0 0 1 1.414 0L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z" clip-rule="evenodd"/></svg>`
+      header.innerHTML = `<span class="collapse-label">${lineCount} lines</span><svg class="collapse-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6.293 6.293a1 1 0 0 1 1.414 0L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414l-3 3a1 1 0 0 1-1.414 0l-3-3a1 1 0 0 1 0-1.414z" clip-rule="evenodd"/></svg>`
 
       const panel = document.createElement('div')
       panel.className = 'collapse-panel'

@@ -2137,3 +2137,32 @@ figure.notion-asset-wrapper.notion-asset-wrapper-video > div {
 .notion-gallery {
   padding: 0 16px;
 }
+
+/* 代码块折叠外壳，由 components/PrismMac.js 的 renderCollapseCode 动态插入 */
+.collapse-panel-wrapper {
+  @apply rounded-md overflow-hidden border border-gray-200 dark:border-gray-700;
+}
+
+.collapse-header {
+  @apply w-full flex items-center justify-between px-3 py-1.5 cursor-pointer;
+  @apply text-xs font-normal text-gray-500 dark:text-gray-400;
+  @apply bg-gray-50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700;
+  @apply transition-colors duration-200;
+}
+
+.collapse-chevron {
+  @apply w-4 h-4 flex-none transition-transform duration-200;
+}
+
+.collapse-panel-wrapper.is-expanded .collapse-chevron {
+  @apply rotate-180;
+}
+
+/* maxHeight 由 setExpanded 以内联样式控制，此处只负责过渡 */
+.collapse-panel {
+  @apply overflow-hidden transition-all duration-300;
+}
+
+.collapse-panel > .code-toolbar {
+  @apply my-0;
+}
